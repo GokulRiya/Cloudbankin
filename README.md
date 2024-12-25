@@ -16,6 +16,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Stream Error Show
 
+`Ctrl + click` Error or Go to `..\node_modules\@types\node\stream\web.d.ts`
+
 ## line no: 487 - Command Below line
 
 var ReadableByteStreamController: typeof globalThis extends
