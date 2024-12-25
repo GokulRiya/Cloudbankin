@@ -1,0 +1,98 @@
+<div class="container">
+    <mat-stepper labelPosition="bottom" linear #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Borrower Company Info</ng-template>
+                <h2>Borrower Company Info</h2>
+                <div class="container">
+                    <div class="columns">
+                        <div class="form-group">
+                            <label>Property Name </label>
+                            <input formControlName="property_Name" type="text" placeholder="Property Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Property Type</label>
+                            <select formControlName="property_Type" placeholder="Property Name">
+                                <option value="0" disabled selected>Property Type</option>
+                                <option *ngFor="let item of options" value="{{item}}">{{item}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of Units</label>
+                            <select formControlName="number_of_Units" placeholder="Number of Units">
+                                <option value="0" disabled selected>Number of Units</option>
+                                <option *ngFor="let item of units" value="{{item}}">{{item}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="textarea">
+                        <label for="property-address">Property Address</label>
+                        <textarea placeholder="Enter Borrower Name" formControlName="property_Address"
+                            rows="5"></textarea>
+                    </div>
+                    <label>File Attachment</label>
+                    <div class="file file-upload">
+                        <span>Browse</span> to Attach a File
+                        <input type="file" />
+                    </div>
+                </div>
+                <div class="next">
+                    <button class="back">Back</button>
+                    <button matStepperNext class="continue">Continue</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="directorFormGroup">
+            <form [formGroup]="directorFormGroup">
+                <ng-template matStepLabel>Dircetor Info</ng-template>
+                <div class="name-group">
+                    <label>Name</label>
+                    <input formControlName="name" type="text" placeholder="Ex. Gokul Govindaraj">
+                </div>
+                <div class="next">
+                    <button class="back">Back</button>
+                    <button matStepperNext class="continue">Continue</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="financialGroup">
+            <form [formGroup]="financialGroup">
+                <ng-template matStepLabel>Financial Info</ng-template>
+                <div class="name-group">
+                    <label>Name</label>
+                    <input formControlName="name" type="text" placeholder="Ex. Gokul Govindaraj">
+                </div>
+                <div class="next">
+                    <button class="back">Back</button>
+                    <button matStepperNext class="continue">Continue</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="performancemGroup">
+            <form [formGroup]="performancemGroup">
+                <ng-template matStepLabel>Past Performance Details</ng-template>
+                <div class="name-group">
+                    <label>Name</label>
+                    <input formControlName="name" type="text" placeholder="Ex. Gokul Govindaraj">
+                </div>
+                <div class="next">
+                    <button class="back">Back</button>
+                    <button matStepperNext class="continue">Continue</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="documentFormGroup">
+            <form [formGroup]="documentFormGroup">
+                <ng-template matStepLabel>Document Upload</ng-template>
+                <div class="name-group">
+                    <label>Name</label>
+                    <input formControlName="name" type="text" placeholder="Ex. Gokul Govindaraj">
+                </div>
+                <div>
+                    <button class="back" matStepperPrevious>Back</button>
+                    <button (click)="finalSubmit()" class="continue">Save</button>
+                </div>
+            </form>
+        </mat-step>
+    </mat-stepper>
+</div>

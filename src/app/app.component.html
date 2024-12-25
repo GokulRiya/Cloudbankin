@@ -1,0 +1,23 @@
+<header class="header">
+    <!-- Logo -->
+    <div class="logo">Logo</div>
+
+
+    <!-- User Profile -->
+    <div class="user-profile">
+        <img src="../assets/profile.png" alt="User Profile" style="border-radius: 50%;" width="30" height="30">
+        <span>John Doe</span>
+    </div>
+</header>
+<router-outlet></router-outlet>
+
+
+<script>
+    // Toggle menu visibility on mobile
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', () => {
+        menu.classList.toggle('show');
+    });
+</script>
